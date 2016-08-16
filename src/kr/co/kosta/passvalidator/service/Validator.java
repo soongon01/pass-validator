@@ -1,6 +1,6 @@
 package kr.co.kosta.passvalidator.service;
 
-import kr.co.kosta.passvalidator.util.PasswordComplexityContants;
+import static kr.co.kosta.passvalidator.util.PasswordComplexityContants.*;
 
 public class Validator {
 
@@ -10,18 +10,18 @@ public class Validator {
 			//매우약함, 약함
 			try {
 				Integer.parseInt(passwd);
-				return PasswordComplexityContants.TYPE_VERY_WEAK;
+				return TYPE_VERY_WEAK;
 			}
 			catch (NumberFormatException e) {
-				return PasswordComplexityContants.TYPE_WEAK;
+				return TYPE_WEAK;
 			}
 		}
 		else {
 			if (containsSpecialChar(passwd)) {
-				return PasswordComplexityContants.TYPE_VERY_STRONG;
+				return TYPE_VERY_STRONG;
 			}
 			else {
-				return PasswordComplexityContants.TYPE_STRONG;
+				return TYPE_STRONG;
 				
 			}
 		}

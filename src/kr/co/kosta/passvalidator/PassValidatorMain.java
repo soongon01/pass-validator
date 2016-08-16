@@ -1,7 +1,7 @@
 package kr.co.kosta.passvalidator;
 
 import kr.co.kosta.passvalidator.service.Validator;
-import kr.co.kosta.passvalidator.util.PasswordComplexityContants;
+import static kr.co.kosta.passvalidator.util.PasswordComplexityContants.*;
 
 public class PassValidatorMain {
 	
@@ -14,16 +14,16 @@ public class PassValidatorMain {
 		int validCode = validator.passwordValidate(passwd);
 		
 		switch (validCode) {
-			case PasswordComplexityContants.TYPE_VERY_WEAK:
+			case TYPE_VERY_WEAK:
 				System.out.println("매우약함");
 				break;
-			case PasswordComplexityContants.TYPE_WEAK:
+			case TYPE_WEAK:
 				System.out.println("약함");
 				break;
-			case PasswordComplexityContants.TYPE_STRONG:
+			case TYPE_STRONG:
 				System.out.println("강함");
 				break;
-			case PasswordComplexityContants.TYPE_VERY_STRONG:
+			case TYPE_VERY_STRONG:
 				System.out.println("매우강함");
 				break;
 			default:
